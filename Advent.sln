@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Biboo", "Biboo\Biboo.vcxproj", "{16A9DC02-0CD2-4ED6-8B23-270AD29DF732}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16A9DC02-0CD2-4ED6-8B23-270AD29DF732}.Debug|x64.ActiveCfg = Debug|x64
+		{16A9DC02-0CD2-4ED6-8B23-270AD29DF732}.Debug|x64.Build.0 = Debug|x64
+		{16A9DC02-0CD2-4ED6-8B23-270AD29DF732}.Release|x64.ActiveCfg = Release|x64
+		{16A9DC02-0CD2-4ED6-8B23-270AD29DF732}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8940C92A-16E9-4922-8BCE-8545BA982EE1}
+	EndGlobalSection
+EndGlobal
