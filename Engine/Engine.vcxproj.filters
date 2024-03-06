@@ -13,23 +13,71 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\RenderAPI">
+      <UniqueIdentifier>{48d4e56a-920e-4ae6-8a9b-87fd35c19da9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RenderAPI\DirectX12">
+      <UniqueIdentifier>{f209c22c-e2a7-47e2-8b0b-9cfa57f94f24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RenderAPI\DirectX12\DGXI">
+      <UniqueIdentifier>{6440a82f-3893-4e6b-880a-dc8d6ba0c920}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\RenderAPI\DirectX12\Base">
+      <UniqueIdentifier>{32545296-8416-44ea-a978-a97afcbad126}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="resources\images\Advent.ico">
+    <ClCompile Include="src\pch.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Base\D12Device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\RenderAPI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Helper.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineMin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\resource\resource.h">
       <Filter>Resource Files</Filter>
-    </Image>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.h">
+      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.h">
+      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\DirectX12\Base\D12Device.h">
+      <Filter>Header Files\RenderAPI\DirectX12\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\RenderAPI.h">
+      <Filter>Header Files\RenderAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="resources\Engine.rc">
+    <ResourceCompile Include="..\resource\Advent.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="resources\resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

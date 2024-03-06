@@ -1,5 +1,18 @@
+#include "Application.h"
 
-auto main(void) -> int
+int main()
 {
-	return 0;
+	using namespace Engine;
+
+	Application engineApp;
+
+	if (engineApp.Initialize())
+	{
+		while (engineApp.IsRunning())
+		{
+			engineApp.Update();
+		}
+	}
+
+
 }
