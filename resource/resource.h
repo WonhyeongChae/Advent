@@ -1,9 +1,8 @@
 //{{NO_DEPENDENCIES}}
 // Microsoft Visual C++ generated include file.
-// Used by Engine.rc
+// Used by Advent.rc
 //
-#define ADVENT_ICON                       101
-#define BIBOO_ICON						  102
+#define BIBOO_ICON                      101
 
 // Next default values for new objects
 // 

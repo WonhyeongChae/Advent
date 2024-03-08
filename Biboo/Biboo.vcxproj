@@ -154,9 +154,6 @@
       <Project>{78ebe3ed-66d3-45ad-a6ed-f4b162cc3bd5}</Project>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\resource\ico\Advent.ico" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

@@ -28,6 +28,9 @@
     <Filter Include="Header Files\RenderAPI\DirectX12\Debug">
       <UniqueIdentifier>{69e080b3-c22d-4a04-b4f1-1301259fbada}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\RenderAPI\DirectX12\Commands">
+      <UniqueIdentifier>{4cd6faab-cf5c-43ec-94d0-9c67e2befabd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
@@ -52,7 +55,13 @@
       <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
     </ClCompile>
     <ClCompile Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Commands\D12CommandQueue.cpp">
+      <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Commands\D12CommandList.cpp">
+      <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -87,7 +96,13 @@
       <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
     </ClInclude>
     <ClInclude Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\DirectX12\Commands\D12CommandList.h">
+      <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\DirectX12\Commands\D12CommandQueue.h">
+      <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

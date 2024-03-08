@@ -96,6 +96,9 @@ namespace Engine
 	void Application::OnDestroy()
 	{
 		std::cout << "Closed the window - shutting down application" << std::endl;
+
+		mRenderer.Release();
+
 #ifdef _DEBUG || DEBUG
 		DXGIDebug::Get().GetLiveObjects();
 #endif // _DEBUG || DEBUG
