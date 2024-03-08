@@ -19,23 +19,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\Base\D12Device.cpp" />
+    <ClCompile Include="src\RenderAPI\DirectX12\Debug\D12Debug.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.cpp" />
     <ClCompile Include="src\RenderAPI\RenderAPI.cpp" />
+    <ClCompile Include="src\Application.cpp" />
+    <ClCompile Include="src\pch.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\resource\resource.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\Base\D12Device.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\Debug\D12Debug.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.h" />
+    <ClInclude Include="src\RenderAPI\RenderAPI.h" />
     <ClInclude Include="src\Application.h" />
     <ClInclude Include="src\EngineMin.h" />
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="src\pch.h" />
-    <ClInclude Include="src\RenderAPI\DirectX12\Base\D12Device.h" />
-    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.h" />
-    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.h" />
-    <ClInclude Include="src\RenderAPI\RenderAPI.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\resource\Advent.rc" />

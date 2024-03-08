@@ -1,6 +1,6 @@
 #include "Application.h"
 
-int main()
+auto main() -> int
 {
 	using namespace Engine;
 
@@ -14,5 +14,5 @@ int main()
 		}
 	}
 
-
+	return EXIT_SUCCESS;
 }

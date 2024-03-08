@@ -2,6 +2,7 @@
 #include "EngineMin.h"
 
 #include <Windows.h>
+#include <utility>
 
 #include "RenderAPI/RenderAPI.h"
 
@@ -32,5 +33,6 @@ namespace Engine
 	private: //variables:
 		HWND mWindowHandle = nullptr;
 		bool mIsRunning = false;
+		std::pair<unsigned, unsigned> mScreenInfo = { GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN) };
 	};
 }

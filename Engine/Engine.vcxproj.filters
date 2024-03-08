@@ -25,24 +25,33 @@
     <Filter Include="Header Files\RenderAPI\DirectX12\Base">
       <UniqueIdentifier>{32545296-8416-44ea-a978-a97afcbad126}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\RenderAPI\DirectX12\Debug">
+      <UniqueIdentifier>{69e080b3-c22d-4a04-b4f1-1301259fbada}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pch.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Base\D12Device.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.cpp">
+    <ClCompile Include="src\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\RenderAPI\RenderAPI.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\RenderAPI</Filter>
     </ClCompile>
-    <ClCompile Include="src\Application.cpp">
+    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.cpp">
+      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.cpp">
+      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Base\D12Device.cpp">
+      <Filter>Header Files\RenderAPI\DirectX12\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Debug\D12Debug.cpp">
+      <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,6 +68,12 @@
     <ClInclude Include="..\resource\resource.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Application.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\RenderAPI.h">
+      <Filter>Header Files\RenderAPI</Filter>
+    </ClInclude>
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.h">
       <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
     </ClInclude>
@@ -68,10 +83,10 @@
     <ClInclude Include="src\RenderAPI\DirectX12\Base\D12Device.h">
       <Filter>Header Files\RenderAPI\DirectX12\Base</Filter>
     </ClInclude>
-    <ClInclude Include="src\RenderAPI\RenderAPI.h">
-      <Filter>Header Files\RenderAPI</Filter>
+    <ClInclude Include="src\RenderAPI\DirectX12\Debug\D12Debug.h">
+      <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
     </ClInclude>
-    <ClInclude Include="src\Application.h">
+    <ClInclude Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
