@@ -10,6 +10,10 @@ namespace Engine
 {
 	RenderAPI::~RenderAPI()
 	{
+		if (mDevice.Get())
+		{
+			mDevice.Reset();
+		}
 	}
 
 	void RenderAPI::Initialize(HWND hwnd)
