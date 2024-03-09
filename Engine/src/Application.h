@@ -6,6 +6,20 @@
 
 #include "RenderAPI/RenderAPI.h"
 
+struct WindowSetup
+{
+	RECT windowRect = { 0, 0, static_cast<LONG>(1280), static_cast<LONG>(720) };
+
+	int screenX = GetSystemMetrics(SM_CXSCREEN);
+	int screenY = GetSystemMetrics(SM_CYSCREEN);
+
+	int windowWidth = windowRect.right - windowRect.left;
+	int windowHeight = windowRect.bottom - windowRect.top;
+
+	int windowX = std::max<int>(0, (screenX - windowWidth) / 2);
+	int windowY = std::max<int>(0, (screenY - windowHeight) / 2);
+};
+
 namespace Engine
 {
 	class MY_API Application
@@ -25,7 +39,6 @@ namespace Engine
 
 		inline bool IsRunning() const { return mIsRunning; }
 
-
 	private: //subsystems:
 
 		RenderAPI mRenderer;
@@ -33,6 +46,7 @@ namespace Engine
 	private: //variables:
 		HWND mWindowHandle = nullptr;
 		bool mIsRunning = false;
-		std::pair<unsigned, unsigned> mScreenInfo = { GetSystemMetrics(SM_CXSCREEN), GetSystemMetrics(SM_CYSCREEN) };
+
+		WindowSetup mWindowSetup;
 	};
 }

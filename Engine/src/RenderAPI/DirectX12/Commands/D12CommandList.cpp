@@ -17,6 +17,13 @@ namespace Engine
 
 	}
 
+	void D12CommandList::ResetCommandList()
+	{
+		mAllocator.Get()->Reset();
+
+		GFXCmd()->Reset(mAllocator.Get(), 0);
+	}
+
 	void D12CommandList::Release()
 	{
 		if (Get())

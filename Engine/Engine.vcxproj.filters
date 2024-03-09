@@ -36,9 +36,6 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\RenderAPI\RenderAPI.cpp">
       <Filter>Header Files\RenderAPI</Filter>
     </ClCompile>
@@ -63,6 +60,18 @@
     <ClCompile Include="src\RenderAPI\DirectX12\Commands\D12CommandList.cpp">
       <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
     </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.cpp">
+      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Resource\D12Resource.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Pipeline\HLSLShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Application.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h">
@@ -76,9 +85,6 @@
     </ClInclude>
     <ClInclude Include="..\resource\resource.h">
       <Filter>Resource Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Application.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\RenderAPI\RenderAPI.h">
       <Filter>Header Files\RenderAPI</Filter>
@@ -103,6 +109,24 @@
     </ClInclude>
     <ClInclude Include="src\RenderAPI\DirectX12\Commands\D12CommandQueue.h">
       <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineSettings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.h">
+      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Application.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\DirectX12\Resource\D12Resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\HLSLShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\RenderAPI\RenderDataTypes.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
