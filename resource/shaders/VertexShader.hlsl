@@ -1,28 +1,28 @@
-struct ModelViewProjection
+struct VS_INPUT
 {
-    matrix MVP;
+    float3 position : POSITION;
+    float4 color : COLOR;
 };
 
-ConstantBuffer<ModelViewProjection> ModelViewProjectionCB : register(b0);
 
-struct VertexPosColor
+struct VS_OUTPUT
 {
-    float3 Position : POSITION;
-    float3 Color : COLOR;
+    float4 position : SV_POSITION;
+    float4 color : COLOR;
 };
 
-struct VertexShaderOutput
+struct PassData
 {
-    float4 Color : COLOR;
-    float4 Position : SV_Position;
+    float4x4 viewproj;
 };
 
-VertexShaderOutput main(VertexPosColor IN)
+ConstantBuffer<PassData> gPassData : register(b0);
+
+VS_OUTPUT main(VS_INPUT input)
 {
-    VertexShaderOutput OUT;
-
-    OUT.Position = mul(ModelViewProjectionCB.MVP, float4(IN.Position, 1.0f));
-    OUT.Color = float4(IN.Color, 1.0f);
-
-    return OUT;
+    VS_OUTPUT output;
+    output.position = float4(input.position, 1.0f);
+    output.color = input.color;
+    
+    return output;
 }
