@@ -15,6 +15,7 @@
 #include "DirectX12/Resource/D12Resource.h"
 
 #include "DirectX12/Pipeline/D12PipelineState.h"
+#include "DirectX12/Descriptors/D12DescriptorHeap.h"
 
 namespace Engine
 {
@@ -38,14 +39,17 @@ namespace Engine
 		DXGISwapChain mSwapChain;
 
 		D12PipelineState mBasePipeline;
+		D12Resource mDepthBuffer;
+
+		D3D12_VIEWPORT mViewport;
+		D3D12_RECT mSRRect;
+
+		D12DescriptorHeap mDepthDescHeap;
 
 		D12Resource mDynamicVertexBuffer;
 		D3D12_VERTEX_BUFFER_VIEW mDynamicVBView;
 
 		D12Resource mCBPassData;
-
-		D3D12_VIEWPORT mViewport;
-		D3D12_RECT mSRRect;
 
 		DirectX::XMMATRIX mViewProjectionMatrix;
 

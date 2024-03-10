@@ -11,8 +11,8 @@ namespace Engine
 	void D12PipelineState::Initialize(ID3D12Device* pDevice)
 	{
 		mRootSignature.Initialize(pDevice);
-		mShaders[0].Initialize(L"VertexShader.hlsl", HLSLShader::ShaderType::VERTEX);
-		mShaders[1].Initialize(L"PixelShader.hlsl", HLSLShader::ShaderType::PIXEL);
+		mShaders[0].Initialize(L"shaders/VertexShader.hlsl", HLSLShader::ShaderType::VERTEX);
+		mShaders[1].Initialize(L"shaders/PixelShader.hlsl", HLSLShader::ShaderType::PIXEL);
 
 		D3D12_GRAPHICS_PIPELINE_STATE_DESC desc = {};
 		desc.pRootSignature = mRootSignature.Get();
@@ -38,7 +38,8 @@ namespace Engine
 		desc.RasterizerState.DepthClipEnable = true;
 		desc.RasterizerState.ConservativeRaster = D3D12_CONSERVATIVE_RASTERIZATION_MODE_OFF;
 
-		desc.DepthStencilState.DepthEnable = false;
+		desc.DSVFormat = DXGI_FORMAT_D32_FLOAT;
+		desc.DepthStencilState.DepthEnable = true;
 		desc.DepthStencilState.DepthFunc = D3D12_COMPARISON_FUNC_LESS;
 		desc.DepthStencilState.DepthWriteMask = D3D12_DEPTH_WRITE_MASK_ALL;
 

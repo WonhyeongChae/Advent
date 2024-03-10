@@ -1,9 +1,6 @@
 #include "pch.h"
 #include "Application.h"
 
-#include <chrono>
-#include <functional>
-
 #include "RenderAPI/DirectX12/Debug/DXGIDebug.h"
 
 namespace Engine
@@ -56,7 +53,7 @@ namespace Engine
 
 		RegisterClass(&wndClass);
 
-		mWindowHandle = CreateWindow(L"BaseWindowClass", L"BIBOO", WS_TILEDWINDOW, mWindowSetup.windowX, mWindowSetup.windowY, mWindowSetup.windowWidth, mWindowSetup.windowHeight, 0, 0, 0, this); //refer back to the lParam stuff later
+		mWindowHandle = CreateWindow(L"BaseWindowClass", L"BIBOO", WS_OVERLAPPEDWINDOW, mWindowSetup.windowX, mWindowSetup.windowY, mWindowSetup.windowWidth, mWindowSetup.windowHeight, 0, 0, 0, this); //refer back to the lParam stuff later
 
 		if (!mWindowHandle)
 		{

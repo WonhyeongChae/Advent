@@ -26,8 +26,6 @@ namespace Engine
 		}
 		else
 		{
-
-
 			MY_ASSERT(false);
 		}
 

@@ -4,7 +4,6 @@
 //
 #define BIBOO_ICON                      101
 #define ADVENT_ICON                     102
-#define IDI_ICON1                       103
 
 // Next default values for new objects
 // 

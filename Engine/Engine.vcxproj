@@ -25,6 +25,7 @@
     <ClCompile Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\Base\D12Device.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\Debug\D12Debug.cpp" />
+    <ClCompile Include="src\RenderAPI\DirectX12\Descriptors\D12DescriptorHeap.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.cpp" />
@@ -47,6 +48,7 @@
     <ClInclude Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\Base\D12Device.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\Debug\D12Debug.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\Descriptors\D12DescriptorHeap.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.h" />

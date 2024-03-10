@@ -51,16 +51,13 @@ namespace Engine
 			return;
 		}
 
-
-		D3D12_CPU_DESCRIPTOR_HANDLE cpuHandle;
-
 		for (unsigned int i = 0; i < mBufferCount; i++)
 		{
 			mRenderTargets[i].Reset();
 
 			MY_EVAL_HR(Get()->GetBuffer(i, IID_PPV_ARGS(mRenderTargets[i].GetAddressOf())), "Error creating buffer for swapchain index: " << i);
 
-			cpuHandle = mRTVHeap->GetCPUDescriptorHandleForHeapStart();
+			D3D12_CPU_DESCRIPTOR_HANDLE cpuHandle = mRTVHeap->GetCPUDescriptorHandleForHeapStart();
 			cpuHandle.ptr += (size_t)mHeapIncrement * i;
 
 			mDevice->CreateRenderTargetView(mRenderTargets[i].Get(), 0, cpuHandle);
@@ -93,9 +90,9 @@ namespace Engine
 	{
 		if (Get())
 		{
-			Reset();
 			DropBuffers();
 			mRTVHeap.Reset();
+			Reset();
 		}
 	}
 }
