@@ -28,10 +28,16 @@
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.cpp" />
+    <ClCompile Include="src\RenderAPI\DirectX12\Pipeline\D12PipelineState.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)resource\shaders</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)resource\shaders</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClCompile Include="src\RenderAPI\DirectX12\Pipeline\D12RootSignature.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\Pipeline\HLSLShader.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\Resource\D12Resource.cpp" />
     <ClCompile Include="src\RenderAPI\RenderAPI.cpp" />
     <ClCompile Include="src\pch.cpp" />
+    <ClCompile Include="src\Utilities\Utilities.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\resource\resource.h" />
@@ -44,6 +50,8 @@
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\D12PipelineState.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\D12RootSignature.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\HLSLShader.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\Resource\D12Resource.h" />
     <ClInclude Include="src\RenderAPI\RenderAPI.h" />
@@ -52,6 +60,7 @@
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\RenderAPI\RenderDataTypes.h" />
+    <ClInclude Include="src\Utilities\Utilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\resource\Advent.rc" />
@@ -113,6 +122,9 @@
     </PublicIncludeDirectories>
     <IncludePath>$(ProjectDir)src;$(IncludePath)</IncludePath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir)src;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -156,6 +168,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)resource\shaders;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -171,8 +184,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;ENGINE_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(SolutionDir)resource\shaders;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
