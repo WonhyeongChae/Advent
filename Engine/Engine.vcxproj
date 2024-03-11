@@ -29,6 +29,7 @@
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.cpp" />
+    <ClCompile Include="src\RenderAPI\DirectX12\MemoryManagement\BufferUploader.cpp" />
     <ClCompile Include="src\RenderAPI\DirectX12\Pipeline\D12PipelineState.cpp">
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)resource\shaders</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)resource\shaders</AdditionalIncludeDirectories>
@@ -52,6 +53,7 @@
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.h" />
+    <ClInclude Include="src\RenderAPI\DirectX12\MemoryManagement\BufferUploader.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\D12PipelineState.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\D12RootSignature.h" />
     <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\HLSLShader.h" />

@@ -10,6 +10,9 @@
 
 #include "../Utilities/Utilities.h"
 
+#define G_BOX_VERTICES 24
+#define G_INDICES 36
+
 namespace Engine
 {
 	using namespace Render;
@@ -43,67 +46,156 @@ namespace Engine
 
 		mSwapChain.Initialize(mDevice.Get(), factory.Get(), mCommandQueue.Get(), hwnd, mWidth, mHeight);
 
-		// mBufferUploader.Initialize(mDevice.Get(), KBs(64));
+		mBufferUploader.Initialize(mDevice.Get(), KBs(64));
 
-		mDynamicVertexBuffer.Initialize(mDevice.Get(), KBs(16), D3D12_HEAP_TYPE_UPLOAD, D3D12_RESOURCE_STATE_GENERIC_READ);
-		mDynamicVertexBuffer.Get()->SetName(L"Dynamic vertex buffer");
+		mVertexBuffer.Initialize(mDevice.Get(), KBs(8), D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_STATE_COMMON);
+		mVertexBuffer.Get()->SetName(L"Vertex buffer");
 
 		std::vector<Vertex> vertices;
 
-#define G_BOX_VERTICES 18
-
 		Vertex verticesbox[G_BOX_VERTICES];
+		verticesbox[0].position = { -1.000000, 1.000000, 1.000000 };
+		verticesbox[0].normal = { 0.0000, 1.0000, 0.0000 };
 
-		verticesbox[0].position = { -1.0f,-1.0f,-1.0f };
-		verticesbox[0].color = { 0.0f,1.0f,0.0f,1.0f };
-		verticesbox[1].position = { -1.0f,1.0f,-1.0f };
-		verticesbox[1].color = { 0.0f,1.0f,0.0f,1.0f };
-		verticesbox[2].position = { 1.0f,-1.0f,-1.0f };
-		verticesbox[2].color = { 0.0f,1.0f,0.0f,1.0f };
+		verticesbox[1].position = { -1.000000, 1.000000, -1.000000 };
+		verticesbox[1].normal = { 0.0000, 1.0000, 0.0000 };
 
-		verticesbox[3].position = { -1.0f,1.0f,-1.0f };
-		verticesbox[3].color = { 0.0f,1.0f,0.0f,1.0f };
-		verticesbox[4].position = { 1.0f,1.0f,-1.0f };
-		verticesbox[4].color = { 0.0f,1.0f,0.0f,1.0f };
-		verticesbox[5].position = { 1.0f,-1.0f,-1.0f };
-		verticesbox[5].color = { 0.0f,1.0f,0.0f,1.0f };
+		verticesbox[2].position = { 1.000000, 1.000000, 1.000000 };
+		verticesbox[2].normal = { 0.0000, 1.0000, 0.0000 };
+
+		verticesbox[3].position = { -1.000000, -1.000000, -1.000000 };
+		verticesbox[3].normal = { 0.0000, 0.0000, -1.0000 };
+
+		verticesbox[4].position = { 1.000000, -1.000000, -1.000000 };
+		verticesbox[4].normal = { 0.0000, 0.0000, -1.0000 };
+
+		verticesbox[5].position = { -1.000000, 1.000000, -1.000000 };
+		verticesbox[5].normal = { 0.0000, 0.0000, -1.0000 };
+
+		verticesbox[6].position = { 1.000000, -1.000000, -1.000000 };
+		verticesbox[6].normal = { 1.0000, 0.0000, 0.0000 };
+
+		verticesbox[7].position = { 1.000000, -1.000000, 1.00000 };
+		verticesbox[7].normal = { 1.0000, 0.0000 ,0.0000 };
+
+		verticesbox[8].position = { 1.000000, 1.000000, -1.000000 };
+		verticesbox[8].normal = { 1.0000, 0.0000, 0.0000 };
+
+		verticesbox[9].position = { 1.000000, -1.000000, 1.000000 };
+		verticesbox[9].normal = { 0.0000, -1.0000, 0.0000 };
+
+		verticesbox[10].position = { 1.000000, -1.000000, -1.000000 };
+		verticesbox[10].normal = { 0.0000, -1.0000, 0.0000 };
+
+		verticesbox[11].position = { -1.000000, -1.000000, 1.000000 };
+		verticesbox[11].normal = { 0.0000, -1.0000, 0.0000 };
+
+		verticesbox[12].position = { -1.000000, -1.000000, 1.000000 };
+		verticesbox[12].normal = { -1.0000, 0.0000 ,0.0000 };
+
+		verticesbox[13].position = { -1.000000, -1.000000, -1.000000 };
+		verticesbox[13].normal = { -1.0000, 0.0000, 0.0000 };
+
+		verticesbox[14].position = { -1.000000, 1.000000, 1.000000 };
+		verticesbox[14].normal = { -1.0000, 0.0000, 0.0000 };
+
+		verticesbox[15].position = { 1.000000, -1.000000, 1.00000 };
+		verticesbox[15].normal = { 0.0000, 0.0000 ,1.0000 };
+
+		verticesbox[16].position = { -1.000000, -1.000000, 1.000000 };
+		verticesbox[16].normal = { 0.0000, 0.0000, 1.0000 };
+
+		verticesbox[17].position = { 1.000000, 1.000000, 1.000000 };
+		verticesbox[17].normal = { 0.0000, 0.0000, 1.0000 };
+
+		//new vertices:
+
+		verticesbox[18].position = { 1.000000, 1.000000, -1.000000 };
+		verticesbox[18].normal = { 0.0000, 1.0000, 0.0000 };
+
+		verticesbox[19].position = { 1.000000, 1.000000, -1.000000 };
+		verticesbox[19].normal = { 0.0000, 0.0000 ,-1.0000 };
+
+		verticesbox[20].position = { 1.000000, 1.000000, 1.000000 };
+		verticesbox[20].normal = { 1.0000, 0.0000, 0.0000 };
+
+		verticesbox[21].position = { -1.000000, -1.000000, -1.000000 };
+		verticesbox[21].normal = { 0.0000 ,-1.0000, 0.0000 };
+
+		verticesbox[22].position = { -1.000000, 1.000000, -1.000000 };
+		verticesbox[22].normal = { -1.0000, 0.0000, 0.0000 };
+
+		verticesbox[23].position = { -1.000000, 1.000000, 1.000000 };
+		verticesbox[23].normal = { 0.0000, 0.0000, 1.0000 };
 
 
-		verticesbox[6].position = { -1.0f,1.0f,1.0f };
-		verticesbox[6].color = { 1.0f,0.0f,0.0f,1.0f };
-		verticesbox[7].position = { -1.0f,-1.0f,1.0f };
-		verticesbox[7].color = { 1.0f,1.0f,0.0f,1.0f };
-		verticesbox[8].position = { 1.0f,1.0f,1.0f };
-		verticesbox[8].color = { 1.0f,1.0f,0.0f,1.0f };
-
-		verticesbox[9].position = { -1.0f,-1.0f,1.0f };
-		verticesbox[9].color = { 1.0f,1.0f,0.0f,1.0f };
-		verticesbox[10].position = { 1.0f,-1.0f,1.0f };
-		verticesbox[10].color = { 1.0f,1.0f,0.0f,1.0f };
-		verticesbox[11].position = { 1.0f,1.0f,1.0f };
-		verticesbox[11].color = { 1.0f,1.0f,0.0f,1.0f };
+		mBufferUploader.Upload((D12Resource*)mVertexBuffer.GetAddressOf(), verticesbox, sizeof(Vertex) * G_BOX_VERTICES,
+			(D12CommandList*)mCommandList.GetAddressOf(), (D12CommandQueue*)mCommandQueue.GetAddressOf(), D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER);
 
 
-		verticesbox[12].position = { -1.0f,-1.0f,1.0f };
-		verticesbox[12].color = { 0.0f,0.0f,1.0f,1.0f };
-		verticesbox[13].position = { -1.0f,1.0f,1.0f };
-		verticesbox[13].color = { 0.0f,0.0f,1.0f,1.0f };
-		verticesbox[14].position = { -1.0f,-1.0f,-1.0f };
-		verticesbox[14].color = { 0.0f,0.0f,1.0f,1.0f };
+		mVBView.BufferLocation = mVertexBuffer.Get()->GetGPUVirtualAddress();
+		mVBView.StrideInBytes = sizeof(Vertex);
+		mVBView.SizeInBytes = KBs(8);
+
+		UINT32 indicies[G_INDICES];
+		indicies[0] = 0;
+		indicies[1] = 1;
+		indicies[2] = 2;
+
+		indicies[3] = 3;
+		indicies[4] = 4;
+		indicies[5] = 5;
+
+		indicies[6] = 6;
+		indicies[7] = 7;
+		indicies[8] = 8;
+
+		indicies[9] = 9;
+		indicies[10] = 10;
+		indicies[11] = 11;
+
+		indicies[12] = 12;
+		indicies[13] = 13;
+		indicies[14] = 14;
+
+		indicies[15] = 15;
+		indicies[16] = 16;
+		indicies[17] = 17;
+
+		indicies[18] = 1;
+		indicies[19] = 18;
+		indicies[20] = 2;
 
 
-		verticesbox[15].position = { -1.0f,1.0f,1.0f };
-		verticesbox[15].color = { 0.0f,1.0f,1.0f,1.0f };
-		verticesbox[16].position = { -1.0f,1.0f,-1.0f };
-		verticesbox[16].color = { 0.0f,1.0f,1.0f,1.0f };
-		verticesbox[17].position = { -1.0f,-1.0f,-1.0f };
-		verticesbox[17].color = { 0.0f,1.0f,1.0f,1.0f };
+		indicies[21] = 4;
+		indicies[22] = 19;
+		indicies[23] = 5;
 
-		memcpy(mDynamicVertexBuffer.GetCPUMemory(), verticesbox, sizeof(Vertex) * G_BOX_VERTICES);
-		
-		mDynamicVBView.BufferLocation = mDynamicVertexBuffer.Get()->GetGPUVirtualAddress();
-		mDynamicVBView.StrideInBytes = sizeof(Vertex);
-		mDynamicVBView.SizeInBytes = KBs(16);
+		indicies[24] = 7;
+		indicies[25] = 20;
+		indicies[26] = 8;
+
+		indicies[27] = 10;
+		indicies[28] = 21;
+		indicies[29] = 11;
+
+		indicies[30] = 13;
+		indicies[31] = 22;
+		indicies[32] = 14;
+
+		indicies[33] = 16;
+		indicies[34] = 23;
+		indicies[35] = 17;
+
+		mIndexBuffer.Initialize(mDevice.Get(), KBs(16), D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_STATE_COMMON);
+		mIndexBuffer->SetName(L"Index buffer");
+
+		mBufferUploader.Upload((D12Resource*)mIndexBuffer.GetAddressOf(), indicies, sizeof(UINT32) * G_INDICES,
+			(D12CommandList*)mCommandList.GetAddressOf(), (D12CommandQueue*)mCommandQueue.GetAddressOf());
+
+		mIBView.BufferLocation = mIndexBuffer.Get()->GetGPUVirtualAddress();
+		mIBView.Format = DXGI_FORMAT_R32_UINT;
+		mIBView.SizeInBytes = KBs(16);
 
 		/*
 		//ONLY CPU = default ram / cache
@@ -138,49 +230,30 @@ namespace Engine
 		mSRRect.top = 0;
 		mSRRect.bottom = static_cast<LONG>(mViewport.Height);
 
-		DirectX::XMMATRIX viewMatrix = DirectX::XMMatrixLookAtLH({ -2.0f, 3.0f,-3.0f,0.0f }, { 0.0f, 0.0f, 0.0f, 0.0f }, { 0.0f, 1.0f, 0.0f, 0.0f });
+		DirectX::XMMATRIX viewMatrix = DirectX::XMMatrixLookAtLH({ -3.0f, 3.5f,-3.0f,0.0f }, { 0.0f,0.0f,0.0f,0.0f }, { 0.0f,1.0f,0.0f,0.0f });
 		DirectX::XMMATRIX projectionMatrix = DirectX::XMMatrixPerspectiveFovLH(1.2217304764f, 16.0f / 9.0f, 1.0f, 50.0f);
 		mViewProjectionMatrix = viewMatrix * projectionMatrix;
 
 		mCBPassData.Initialize(mDevice.Get(), Utils::CalculateConstantbufferAlignment(sizeof(PassData)), D3D12_HEAP_TYPE_UPLOAD, D3D12_RESOURCE_STATE_GENERIC_READ);
-		/*
-		1 Video:
-		Math/Coordinate system: Some DirectXMath functions to setup our 3d world.
+		
+		mMaterialBuffer1.Initialize(mDevice.Get(), Utils::CalculateConstantbufferAlignment(sizeof(MaterialCelShader)), D3D12_HEAP_TYPE_DEFAULT, D3D12_RESOURCE_STATE_COMMON);
+		mMaterialBuffer1->SetName(L"Material CB 1");
 
-		Discuss a bit about the view and the projection matrix
+		MaterialCelShader material;
+		material.diffuseAlbedo = { .65f,0.0f,0.025f,1.0f };
 
-		2 Video:
+		mBufferUploader.Upload((D12Resource*)mMaterialBuffer1.GetAddressOf(), &material, sizeof(MaterialCelShader),
+			(D12CommandList*)mCommandList.GetAddressOf(), (D12CommandQueue*)mCommandQueue.GetAddressOf(), D3D12_RESOURCE_STATE_VERTEX_AND_CONSTANT_BUFFER);
 
-		Uploading the "camera"/viewpoint matrix that helps translate from 3D space into 2D screen space
-		- Constantbuffer
-		- Bind that to the pipeline
-
-		3 Video:
-		Rendering a 3D box -creating the vertices and uploading
-		Depth buffering
-
-		4 Video:
-		- "uploading" data to the default heap
-		- resource barriers
-
-		Define a 3D space, with 3 axes
-		Define the coordinate system axes in relation to each other...
-		- I.E. Which axis is up? Which is forward? Which the right axis?
-
-		Define a camera/eye position with a looking direction
-
-		Define a 3D object at the origin (0,0,0)
-		Offset the camera and set it to look at the origin
-
-		Adress the math and the actual shader computations that translate from 3D world space into 2d "clipspace"/"screenspace"
-
-		Lastly we'll probably need an episode on the depth buffer
-		*/
+		mLights[0].position = { 0.0f,0.0f,0.0f };
+		mLights[0].strength = 1.0f;
+		mLights[0].direction = { .5f,-1.0f,0.0f };
 	}
 
 	void RenderAPI::UpdateDraw()
 	{
-		memcpy(mCBPassData.GetCPUMemory(), &mViewProjectionMatrix, sizeof(PassData));
+		memcpy(mCBPassData.GetCPUMemory(), &mViewProjectionMatrix, sizeof(PassData::viewproject));
+		memcpy((BYTE*)mCBPassData.GetCPUMemory() + sizeof(PassData::viewproject), &mLights[0], sizeof(Light));
 
 		D3D12_RESOURCE_BARRIER barrier = {};
 		barrier.Type = D3D12_RESOURCE_BARRIER_TYPE_TRANSITION;
@@ -207,9 +280,12 @@ namespace Engine
 		mCommandList.GFXCmd()->SetPipelineState(mBasePipeline.Get());
 		mCommandList.GFXCmd()->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-		mCommandList.GFXCmd()->IASetVertexBuffers(0, 1, &mDynamicVBView);
+		mCommandList.GFXCmd()->IASetVertexBuffers(0, 1, &mVBView);
+		mCommandList.GFXCmd()->IASetIndexBuffer(&mIBView);
 		mCommandList.GFXCmd()->SetGraphicsRootConstantBufferView(0, mCBPassData.Get()->GetGPUVirtualAddress());
-		mCommandList.GFXCmd()->DrawInstanced(G_BOX_VERTICES, 1, 0, 0);
+		mCommandList.GFXCmd()->SetGraphicsRootConstantBufferView(1, mMaterialBuffer1.Get()->GetGPUVirtualAddress());
+		//mCommandList.GFXCmd()->DrawInstanced(G_BOX_VERTICES, 1, 0, 0);
+		mCommandList.GFXCmd()->DrawIndexedInstanced(G_INDICES, 1, 0, 0, 0);
 
 		barrier = {};
 		barrier.Type = D3D12_RESOURCE_BARRIER_TYPE_TRANSITION;
@@ -236,7 +312,7 @@ namespace Engine
 
 	void RenderAPI::Release()
 	{
-		mDynamicVertexBuffer.Release();
+		mVertexBuffer.Release();
 
 		mCommandQueue.FlushQueue();
 
