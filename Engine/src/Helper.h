@@ -2,6 +2,7 @@
 #include <exception>
 
 #pragma warning( disable : 4251 )
+#pragma warning( disable : 26495)
 
 #define KBs(x) 1024* (x)
 

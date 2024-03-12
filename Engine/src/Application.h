@@ -6,6 +6,8 @@
 
 #include "RenderAPI/RenderAPI.h"
 
+#include "ImGuiManager.h"
+
 struct WindowSetup
 {
 	RECT windowRect = { 0, 0, static_cast<LONG>(1280), static_cast<LONG>(720) };
@@ -31,20 +33,21 @@ namespace Engine
 
 		void OnCreate(HWND hwnd);
 
-
 		void Update();
-
 
 		void OnDestroy();
 
 		inline bool IsRunning() const { return mIsRunning; }
-
+		inline auto GetWindowHandle() const -> HWND { return mWindowHandle; }
+		
 	private: //subsystems:
 
 		RenderAPI mRenderer;
+		ImGuiManager mManager;
 
 	private: //variables:
 		HWND mWindowHandle = nullptr;
+		
 		bool mIsRunning = false;
 
 		WindowSetup mWindowSetup;

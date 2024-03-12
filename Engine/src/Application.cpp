@@ -63,6 +63,8 @@ namespace Engine
 		ShowWindow(mWindowHandle, SW_SHOW);
 		UpdateWindow(mWindowHandle);
 
+		mManager.Initialize(mWindowHandle);
+
 		mIsRunning = true;
 
 		return mIsRunning;
