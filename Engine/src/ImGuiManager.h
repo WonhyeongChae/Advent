@@ -13,12 +13,8 @@ namespace Engine
 		~ImGuiManager()
 		{};
 
-		auto Initialize(HWND hwnd, const RenderAPI& renderer) -> void;
-		auto GuiUpdate() -> void;
-		auto SetImguiContext() -> void;
-		auto StartFrame() -> void;
-		auto EndFrame() -> void;
-
+		auto Initialize(HWND hwnd, RenderAPI& renderer) -> void;
+		auto Update() -> void;
 	private:
 		int num = 0;
 		enum ImGuiId

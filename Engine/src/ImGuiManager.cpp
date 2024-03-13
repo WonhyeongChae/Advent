@@ -9,7 +9,7 @@
 
 namespace Engine
 {
-	auto ImGuiManager::Initialize(HWND hwnd, const RenderAPI& renderer) -> void
+	auto ImGuiManager::Initialize(HWND hwnd, RenderAPI& renderer) -> void
 	{
 		IMGUI_CHECKVERSION();
 		auto context = ImGui::CreateContext();
@@ -31,24 +31,20 @@ namespace Engine
 
 		if (ImGui_ImplDX12_Init(renderer.GetDevice(), 3, DXGI_FORMAT_R8G8B8A8_UNORM, renderer.GetDescHeap(), renderer.GetDescHeap()->GetCPUDescriptorHandleForHeapStart(), renderer.GetDescHeap()->GetGPUDescriptorHandleForHeapStart()))
 			std::cout << "ImGui: DX12 Init success!\n";
-
-	}
-	auto ImGuiManager::GuiUpdate() -> void
-	{
 		
 	}
-	auto ImGuiManager::SetImguiContext() -> void
-	{}
-	auto ImGuiManager::StartFrame() -> void
+
+	auto ImGuiManager::Update() -> void
 	{
 		ImGui_ImplWin32_NewFrame();
 		ImGui_ImplDX12_NewFrame();
 		ImGui::NewFrame();
+
 		auto show_demo = true;
 		ImGui::ShowDemoWindow(&show_demo);
-
+		
+		ImGui::EndFrame();
 		ImGui::Render();
+		ImGui_ImplDX12_RenderDrawData(ImGui::GetDrawData(), nullptr);
 	}
-	auto ImGuiManager::EndFrame() -> void
-	{}
 }
