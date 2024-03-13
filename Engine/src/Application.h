@@ -38,7 +38,10 @@ namespace Engine
 		void OnDestroy();
 
 		inline bool IsRunning() const { return mIsRunning; }
-		inline auto GetWindowHandle() const -> HWND { return mWindowHandle; }
+		inline auto GetRenderer() -> RenderAPI
+		{
+			return mRenderer; 
+		}
 		
 	private: //subsystems:
 

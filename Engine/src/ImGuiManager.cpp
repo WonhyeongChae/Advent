@@ -1,13 +1,15 @@
-#include "pch.h"
 #include "ImGuiManager.h"
+
+#include <iostream>
 
 #include "imgui.h"
 #include "backends/imgui_impl_win32.h"
 #include "backends/imgui_impl_dx12.h"
 
+
 namespace Engine
 {
-	auto ImGuiManager::Initialize(HWND handle) -> void
+	auto ImGuiManager::Initialize(HWND hwnd, const RenderAPI& renderer) -> void
 	{
 		IMGUI_CHECKVERSION();
 		auto context = ImGui::CreateContext();
@@ -24,13 +26,29 @@ namespace Engine
 			style.Colors[ImGuiCol_DockingEmptyBg].w = 0.f;
 		}
 
-		ImGui_ImplWin32_Init(handle);
-		// ImGui_ImplDX12_Init();
+		if (ImGui_ImplWin32_Init(hwnd))
+			std::cout << "ImGui: Win32 Init success!\n";
+
+		if (ImGui_ImplDX12_Init(renderer.GetDevice(), 3, DXGI_FORMAT_R8G8B8A8_UNORM, renderer.GetDescHeap(), renderer.GetDescHeap()->GetCPUDescriptorHandleForHeapStart(), renderer.GetDescHeap()->GetGPUDescriptorHandleForHeapStart()))
+			std::cout << "ImGui: DX12 Init success!\n";
+
+	}
+	auto ImGuiManager::GuiUpdate() -> void
+	{
+		
 	}
 	auto ImGuiManager::SetImguiContext() -> void
 	{}
 	auto ImGuiManager::StartFrame() -> void
-	{}
+	{
+		ImGui_ImplWin32_NewFrame();
+		ImGui_ImplDX12_NewFrame();
+		ImGui::NewFrame();
+		auto show_demo = true;
+		ImGui::ShowDemoWindow(&show_demo);
+
+		ImGui::Render();
+	}
 	auto ImGuiManager::EndFrame() -> void
 	{}
 }

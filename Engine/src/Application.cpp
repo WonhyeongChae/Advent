@@ -63,8 +63,6 @@ namespace Engine
 		ShowWindow(mWindowHandle, SW_SHOW);
 		UpdateWindow(mWindowHandle);
 
-		mManager.Initialize(mWindowHandle);
-
 		mIsRunning = true;
 
 		return mIsRunning;
@@ -74,6 +72,8 @@ namespace Engine
 	{
 		std::cout << "Created window" << std::endl;
 		mRenderer.Initialize(hwnd, mWindowSetup.windowWidth, mWindowSetup.windowHeight);
+		mManager.Initialize(hwnd, GetRenderer());
+		//mManager.StartFrame();
 	}
 
 	void Application::Update()
@@ -88,6 +88,7 @@ namespace Engine
 		if (mIsRunning)
 		{
 			mRenderer.UpdateDraw();
+			//mManager.GuiUpdate();
 		}
 	}
 

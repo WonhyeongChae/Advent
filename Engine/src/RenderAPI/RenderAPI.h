@@ -31,6 +31,16 @@ namespace Engine
 		void UpdateDraw();
 		void Release();
 
+		auto GetDevice() const -> ID3D12Device*
+		{
+			return mDevice.Get();
+		}
+
+		auto GetDescHeap() const -> ID3D12DescriptorHeap*
+		{
+			return mDepthDescHeap.Get();
+		}
+
 	private:
 		D12Device mDevice;
 

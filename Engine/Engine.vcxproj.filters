@@ -31,9 +31,6 @@
     <Filter Include="Header Files\RenderAPI\DirectX12\Commands">
       <UniqueIdentifier>{4cd6faab-cf5c-43ec-94d0-9c67e2befabd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\ImGui">
-      <UniqueIdentifier>{6ccbe69b-a9c7-48ba-b795-27b9e19c365f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\RenderAPI\DirectX12\Resource">
       <UniqueIdentifier>{7676bde6-8bc2-4b10-8a45-b6192af315ac}</UniqueIdentifier>
     </Filter>
@@ -95,6 +92,27 @@
     </ClCompile>
     <ClCompile Include="src\RenderAPI\DirectX12\Resource\D12Resource.cpp">
       <Filter>Header Files\RenderAPI\DirectX12\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui-docking\backends\imgui_impl_dx12.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui-docking\backends\imgui_impl_win32.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui-docking\imgui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui-docking\imgui_draw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui-docking\imgui_tables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui-docking\imgui_widgets.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\imgui-docking\imgui_demo.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +187,15 @@
     </ClInclude>
     <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\D12RootSignature.h">
       <Filter>Header Files\RenderAPI\DirectX12\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui-docking\imgui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui-docking\backends\imgui_impl_dx12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\imgui-docking\backends\imgui_impl_win32.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

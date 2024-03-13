@@ -13,6 +13,5 @@ namespace Engine
 		D12Device(IDXGIAdapter* pAdapter);
 
 		void Init(IDXGIAdapter* pAdapter);
-
 	};
 }
