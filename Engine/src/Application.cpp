@@ -65,7 +65,7 @@ namespace Engine
 
 		mIsRunning = true;
 
-		//mManager.Initialize(mWindowHandle, mRenderer);
+		mManager.Initialize(mWindowHandle, mRenderer);
 		
 		return mIsRunning;
 	}
@@ -87,7 +87,7 @@ namespace Engine
 		if (mIsRunning)
 		{
 			mRenderer.UpdateDraw();
-			//mManager.Update();
+			mManager.Update();
 		}
 	}
 

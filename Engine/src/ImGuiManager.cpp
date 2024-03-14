@@ -31,7 +31,9 @@ namespace Engine
 
 		if (ImGui_ImplDX12_Init(renderer.GetDevice(), 3, DXGI_FORMAT_R8G8B8A8_UNORM, renderer.GetDescHeap(), renderer.GetDescHeap()->GetCPUDescriptorHandleForHeapStart(), renderer.GetDescHeap()->GetGPUDescriptorHandleForHeapStart()))
 			std::cout << "ImGui: DX12 Init success!\n";
-		
+
+		if (ImGui_ImplDX12_CreateDeviceObjects())
+			std::cout << "ImGui: CreateDeviceObjects success!\n";		
 	}
 
 	auto ImGuiManager::Update() -> void
