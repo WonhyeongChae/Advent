@@ -1,7 +1,5 @@
 #pragma once
-#include "EngineMin.h"
-#include <Windows.h>
-#include <DirectXMath.h>
+#include "pch.h"
 
 #include "RenderDataTypes.h"
 
@@ -46,20 +44,21 @@ namespace Engine
 		D3D12_RECT mSRRect;
 
 		D12DescriptorHeap mDepthDescHeap;
-
 		BufferUploader mBufferUploader;
-
-		D12Resource mVertexBuffer;
-		D12Resource mIndexBuffer;
-		D12Resource mMaterialBuffer1;
 
 		D3D12_VERTEX_BUFFER_VIEW mVBView;
 		D3D12_INDEX_BUFFER_VIEW mIBView;
 
+		DirectX::XMMATRIX mViewProjectionMatrix;
+
+		//scene resources
+		D12Resource mVertexBuffer;
+		D12Resource mIndexBuffer;
+		std::vector<D12Resource> mMaterialBuffers;
+		std::vector<D12Resource> mObjTransforms;
+
 		D12Resource mCBPassData;
 		Render::Light mLights[8];
-
-		DirectX::XMMATRIX mViewProjectionMatrix;
 
 	private:
 		UINT mWidth = 0;

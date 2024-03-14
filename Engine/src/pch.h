@@ -3,6 +3,7 @@
 #define PCH_H
 
 #include <iostream>
+#include <vector>
 
 //DirectX headers:
 #include <d3d12.h>
