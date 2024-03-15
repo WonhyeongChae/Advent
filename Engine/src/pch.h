@@ -12,15 +12,13 @@
 
 #include <DirectXMath.h>
 
+#include <wrl.h>
+
 //compiled lib files for d12
 #pragma comment(lib, "dxgi.lib")
 #pragma comment(lib, "D3D12.lib")
 #pragma comment(lib, "dxguid.lib")
 #pragma comment(lib, "D3DCompiler.lib")
-
-#include "EngineMin.h"
-#include "Helper.h"
-#include "EngineSettings.h"
 
 #include "../../resource/resource.h"
 

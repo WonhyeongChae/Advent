@@ -39,59 +39,14 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\RenderAPI\RenderAPI.cpp">
-      <Filter>Header Files\RenderAPI</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Base\D12Device.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\Base</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Debug\D12Debug.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Commands\D12CommandQueue.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Commands\D12CommandList.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Pipeline\HLSLShader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\Application.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Pipeline\D12RootSignature.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Pipeline\D12PipelineState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Utilities\Utilities.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Descriptors\D12DescriptorHeap.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\MemoryManagement\BufferUploader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\ImGuiManager.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\RenderAPI\DirectX12\Resource\D12Resource.cpp">
-      <Filter>Header Files\RenderAPI\DirectX12\Resource</Filter>
     </ClCompile>
     <ClCompile Include="src\imgui-docking\backends\imgui_impl_dx12.cpp">
       <Filter>Source Files</Filter>
@@ -114,6 +69,9 @@
     <ClCompile Include="src\imgui-docking\imgui_demo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\DirectX12\DX12Device.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\pch.h">
@@ -128,65 +86,17 @@
     <ClInclude Include="..\resource\resource.h">
       <Filter>Resource Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\RenderAPI\RenderAPI.h">
-      <Filter>Header Files\RenderAPI</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIAdapter.h">
-      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGIFactory.h">
-      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Base\D12Device.h">
-      <Filter>Header Files\RenderAPI\DirectX12\Base</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Debug\D12Debug.h">
-      <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Debug\DXGIDebug.h">
-      <Filter>Header Files\RenderAPI\DirectX12\Debug</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Commands\D12CommandList.h">
-      <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Commands\D12CommandQueue.h">
-      <Filter>Header Files\RenderAPI\DirectX12\Commands</Filter>
-    </ClInclude>
     <ClInclude Include="src\EngineSettings.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\DXGI\DXGISwapChain.h">
-      <Filter>Header Files\RenderAPI\DirectX12\DGXI</Filter>
     </ClInclude>
     <ClInclude Include="src\Application.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\HLSLShader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\RenderDataTypes.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\D12PipelineState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Utilities\Utilities.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Descriptors\D12DescriptorHeap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\MemoryManagement\BufferUploader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\ImGuiManager.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Resource\D12Resource.h">
-      <Filter>Header Files\RenderAPI\DirectX12\Resource</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderAPI\DirectX12\Pipeline\D12RootSignature.h">
-      <Filter>Header Files\RenderAPI\DirectX12\Resource</Filter>
     </ClInclude>
     <ClInclude Include="src\imgui-docking\imgui.h">
       <Filter>Header Files</Filter>
@@ -210,6 +120,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\imgui-docking\imstb_truetype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\DirectX12\DX12Device.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
