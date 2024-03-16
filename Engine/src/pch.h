@@ -3,6 +3,7 @@
 #define PCH_H
 
 #include <iostream>
+#include <vector>
 
 //DirectX headers:
 #include <d3d12.h>
@@ -13,6 +14,9 @@
 #include <DirectXMath.h>
 
 #include <wrl.h>
+
+#include <windows.h>
+#include <windowsx.h>
 
 //compiled lib files for d12
 #pragma comment(lib, "dxgi.lib")

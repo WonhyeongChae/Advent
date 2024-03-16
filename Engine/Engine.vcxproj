@@ -13,6 +13,11 @@
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
     <ClCompile Include="src\DirectX12\DX12Device.cpp" />
+    <ClCompile Include="src\DirectX12\DX12PipelineState.cpp" />
+    <ClCompile Include="src\DirectX12\DX12RenderBuffer.cpp" />
+    <ClCompile Include="src\DirectX12\DX12RootSignature.cpp" />
+    <ClCompile Include="src\DirectX12\DX12Shader.cpp" />
+    <ClCompile Include="src\DirectX12\InputLayout.cpp" />
     <ClCompile Include="src\imgui-docking\backends\imgui_impl_dx12.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
@@ -47,10 +52,16 @@
     </ClCompile>
     <ClCompile Include="src\pch.cpp" />
     <ClCompile Include="src\Utilities\Utilities.cpp" />
+    <ClCompile Include="src\WindowsHelper.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\resource\resource.h" />
     <ClInclude Include="src\DirectX12\DX12Device.h" />
+    <ClInclude Include="src\DirectX12\DX12PipelineState.h" />
+    <ClInclude Include="src\DirectX12\DX12RenderBuffer.h" />
+    <ClInclude Include="src\DirectX12\DX12RootSignature.h" />
+    <ClInclude Include="src\DirectX12\DX12Shader.h" />
+    <ClInclude Include="src\DirectX12\InputLayout.h" />
     <ClInclude Include="src\EngineSettings.h" />
     <ClInclude Include="src\imgui-docking\backends\imgui_impl_dx12.h" />
     <ClInclude Include="src\imgui-docking\backends\imgui_impl_win32.h" />
@@ -66,6 +77,8 @@
     <ClInclude Include="src\Helper.h" />
     <ClInclude Include="src\pch.h" />
     <ClInclude Include="src\Utilities\Utilities.h" />
+    <ClInclude Include="src\WindowsHelper.h" />
+    <ClInclude Include="src\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="..\resource\Advent.rc" />
